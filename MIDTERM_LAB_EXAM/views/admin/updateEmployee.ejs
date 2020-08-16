@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Employee</title>
+    <h1>Update Employee <%data.name%></h1>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#gender').val('<%=data.gender%>')
+});
+</script>
+
+<body>
+    <div>
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input type="text" name="name" id="name" value="<%=data.name%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone:
+                    </td>
+                    <td>
+                        <input type="text" name="phone" id="phone" value="<%=data.phone%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender:
+                    </td>
+                    <td>
+                        <select name="gender" id="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Designation:
+                    </td>
+                    <td>
+                        <input type="text" name="designation" id="designation" value="<%=data.designation%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div style="color: red;">
+        <% if (errors.length > 0) { %> 
+                <ul>
+                    <% errors.forEach(error => { %>
+                        <li>
+                            <%=error%>
+                        </li>
+                    <% }); %>
+                <lil>
+            <% } %> 
+    </div>
+</body>
+</html>

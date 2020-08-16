@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <form method="post" id="myform">
+            <fieldset>
+                <legend>SignIn</legend>
+                <table>
+                    <tr>
+                        <td style="color:red">
+                            <%=error%>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>username</td>
+                        <td><input type="text" name="username" ></td>
+                        <td><span id="hidden1" style="color: red"></span></td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td><input type="password" name="password" id ="password"></td>
+                        <td><span id="hidden2" style="color: red"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" name="submit" value="Submit"></td>
+                    </tr>
+                    <tr>
+                        <td> <a href="/registration">Create a new id</a></td>   
+                    </tr>
+                    <div id="warn-div" style="color: red"></div>
+                </table>
+            </fieldset>
+        </form>
+    </body>
+</html>

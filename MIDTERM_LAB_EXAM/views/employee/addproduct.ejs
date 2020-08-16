@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Product</title>
+    <h1>Add Product</h1>
+</head>
+
+<body>
+    <div>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input type="text" name="name" id="name" value="<%=val.name%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quantity:
+                    </td>
+                    <td>
+                        <input type="number" name="quantity" id="quantity" value="<%=val.quantity%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Price:
+                    </td>
+                    <td>
+                        <input type="number" name="price" id="price" value="<%=val.price%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div style="color: white; background-color: red;">
+        <% if (errors.length > 0) { %> 
+            <div class="error" style="color: white; background-color: red; width: fit-content;">
+                <ul>
+                    <% errors.forEach(error => { %>
+                        <li>
+                            <%=error%>
+                        </li>
+                    <% }); %>
+                <lil>
+            </div>
+            <% } %> 
+    </div>
+</body>
+</html>

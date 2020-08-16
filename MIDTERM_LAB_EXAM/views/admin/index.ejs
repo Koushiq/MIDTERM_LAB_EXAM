@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <h1>Employee List</h1>
+</head>
+
+<body>
+
+    <table>
+    	<tr>
+    		<table>
+    			<tr>
+    				<td><button onclick="window.location.href='/admin/addemployee'"> Add Employee</button>	</td>
+    				<td><input type="text" name=""></td>
+    			</tr>
+    		</table>
+    		
+    	</tr>
+        <tr>
+            <td>
+                <table id="results">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Password</th>
+                        <th>Gender</th>
+                        <th>Action</th>
+
+                    </tr>
+                    <% emp.forEach(employee => { %>
+                        <tr>
+                            <td><%= employee.u_id %></td>
+                            <td><%= employee.name %></td>
+                            <td><%= employee.phone %></td>
+                            <td><%= employee.password %></td>
+                            <td><%= employee.gender %></td>
+                            <td><button onclick="location.href = '/admin/update/<%-employee.u_id%>'">Update</button><button onclick="location.href = '/admin/delete/<%-employee.u_id%>'">Delete</button></td>
+                        </tr>
+                    <% }); %>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

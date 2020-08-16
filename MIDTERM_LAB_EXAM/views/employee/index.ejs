@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product List</title>
+    <h1>Product List</h1>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>
+                <table width = '100%'>
+                    <tr>
+                        <td width = '100%'>
+                            <input type="text" name="search" id="searchInp" style="width: 100%;">
+                        </td>
+                        <td>
+                            <button type="button" id="searchBtn">Search</button>
+                        </td>
+                        <td>
+                            <button type="button" id="addBtn" style="white-space: nowrap;" onclick="location.href = '/employee/addproduct'">Add Product</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table id="results">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <% products.forEach(prod => { %>
+                        <tr>
+                            <td><%= prod.ID %></td>
+                            <td><%= prod.name %></td>
+                            <td><%= prod.quantity %></td>
+                            <td><%= prod.price %></td>
+                            <td><button onclick="location.href = '/employee/updateproduct/<%-prod.id%>'">Edit</button><button onclick="location.href = '/employee/deleteproduct/<%-prod.id%>'">Delete</button></td>
+                        </tr>
+                    <% }); %>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

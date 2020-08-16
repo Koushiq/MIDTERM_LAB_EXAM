@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Product <%=product.name%></title>
+    <h1>Update Product <%=product.name%></h1>
+</head>
+
+
+<body>
+    <div>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input type="text" name="name" id="name" value="<%=value.name%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quantity:
+                    </td>
+                    <td>
+                        <input type="number" name="quantity" id="quantity" value="<%=value.quantity%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Price:
+                    </td>
+                    <td>
+                        <input type="number" name="price" id="price" value="<%=value.price%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div style="color: white; background-color: red;">
+        <% if (valueCheck.length > 0) { %> 
+            <div class="error" style="color: white; background-color: red; width: fit-content;">
+                <ul>
+                    <% valueCheck.forEach(error => { %>
+                        <li>
+                            <%=error%>
+                        </li>
+                    <% }); %>
+                <lil>
+            </div>
+            <% } %> 
+    </div>
+</body>
+</html>
