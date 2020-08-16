@@ -16,8 +16,8 @@ module.exports ={
 		});
 	},
 
-	insertByAdmin: (user,callback)=>{
-		var sql= "insert into alluser values('"+user.username+"','"+user.password+"','user') ";
+	insert: (user,callback)=>{
+		var sql= "insert into alluser values('"+user.username+"','"+user.password+"','"+user.employeename+"','"+user.contact+"', 'user') ";
 		console.log(sql);
 		db.execute(sql, (status)=>{
             if(status)
