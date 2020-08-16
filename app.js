@@ -3,7 +3,7 @@ var exSession 	= require('express-session');
 var bodyParser 	= require('body-parser');
 var login = require("./controller/login");
 var admin = require("./controller/admin");
-
+var logout = require("./controller/logout");
 
 var app = express();
 app.set('view engine', 'ejs');
@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(exSession({secret: 'my secret value', saveUninitialized: true, resave: false}));
 
 app.use("/login",login);
+app.use("/logout",logout);
 
 app.use("/admin",admin);
 
